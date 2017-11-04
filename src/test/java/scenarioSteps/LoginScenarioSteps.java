@@ -11,14 +11,7 @@ import pageSteps.SignupPageSteps;
 import cucumber.api.Scenario;
 
 public class LoginScenarioSteps {
-    WebDriver driver;
     LoginPageSteps loginPageSteps = new LoginPageSteps();
-    SignupPageSteps signupPageSteps = new SignupPageSteps();
-
-    @Before
-    public void beforeStappen(Scenario scenario) {
-        System.out.println("Starting test: "+scenario.getName()+"\n");
-    }
 
     @Given("^I open the login page at '(.*)'$")
     public void loginAtPage(String url) throws Exception{
@@ -37,7 +30,7 @@ public class LoginScenarioSteps {
 
     @After
     public void tearDown() {
-        signupPageSteps.tearDown();
+        loginPageSteps.tearDown();
     }
 
 }

@@ -4,16 +4,19 @@ import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-/**
- * Created by testwerk on 19-10-17.
- */
-@DefaultUrl("http://www.phptravels.net/register")
+
+//@DefaultUrl("http://www.phptravels.net/register")
 public class SignUpPage extends PageObject {
     WebDriver driver;
+    WebDriverWait wait;
+
 
     public SignUpPage(WebDriver driver) {
         this.driver = driver;
+        wait = new WebDriverWait (driver, 3);
     }
 
     public void typeInputFirstname(String firstname) {
@@ -41,7 +44,15 @@ public class SignUpPage extends PageObject {
     }
 
     public void clickSubmitButton() {
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[type=submit]")));
         driver.findElement(By.cssSelector("button[type=submit]")).click();
+
+    }
+
+    public String getValueHeading() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".RTL")));
+        return driver.findElement(By.cssSelector(".RTL")).getText();
     }
 
 }
