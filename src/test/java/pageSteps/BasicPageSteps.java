@@ -1,5 +1,6 @@
 package pageSteps;
 
+import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -7,6 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BasicPageSteps {
 
+    @Managed
     WebDriver driver;
 
     public BasicPageSteps(){

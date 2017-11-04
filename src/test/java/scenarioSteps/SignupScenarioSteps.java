@@ -14,18 +14,18 @@ public class SignupScenarioSteps {
         signupPageSteps.openPage(url);
     }
 
-    @Then("^the welcome message '(.*)' is displayed$")
-    public void displayedWelcomeMessage(String message)throws Exception {
-        signupPageSteps.checkLoggedIn(message);
-    }
-
     @When("^I make a new account for user '(.*)'$")
     public void makeAccount(String email) throws Exception{
         signupPageSteps.createUser(email);
     }
 
+    @Then("^the welcome message '(.*)' is displayed$")
+    public void displayedWelcomeMessage(String message)throws Exception {
+        signupPageSteps.checkLoggedIn(message);
+    }
+
     @After
-    public void tearDown() {
+    public void end() {
         signupPageSteps.tearDown();
     }
 

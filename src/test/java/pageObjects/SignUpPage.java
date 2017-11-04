@@ -1,14 +1,12 @@
 package pageObjects;
 
 import net.serenitybdd.core.pages.PageObject;
-import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.server.handler.FindElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
-//@DefaultUrl("http://www.phptravels.net/register")
 public class SignUpPage extends PageObject {
     WebDriver driver;
     WebDriverWait wait;
@@ -44,10 +42,8 @@ public class SignUpPage extends PageObject {
     }
 
     public void clickSubmitButton() {
-
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[type=submit]")));
         driver.findElement(By.cssSelector("button[type=submit]")).click();
-
     }
 
     public String getValueHeading() {

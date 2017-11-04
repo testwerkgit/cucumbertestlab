@@ -1,11 +1,6 @@
 package pageSteps;
 
-import net.thucydides.core.annotations.DefaultUrl;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import pageObjects.AccountPage;
 import pageObjects.SignUpPage;
 
 public class SignupPageSteps extends BasicPageSteps {
