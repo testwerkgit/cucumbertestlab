@@ -2,6 +2,7 @@ package pageSteps;
 
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -13,7 +14,7 @@ public class BasicPageSteps {
 
     public BasicPageSteps(){
 
-        switch (System.getProperty("os.name")) {
+/*        switch (System.getProperty("os.name")) {
             case "Linux":
                 System.setProperty("webdriver.gecko.driver",
                         System.getProperty("user.dir") + "/vendor/geckodriver");
@@ -35,7 +36,12 @@ public class BasicPageSteps {
         options.addPreference("log", "{level: info}");
         capabilities.setCapability("moz:firefoxOptions", options);
 
-        driver = new FirefoxDriver(capabilities);
+        driver = new FirefoxDriver(capabilities);*/
+
+        System.setProperty("webdriver.chrome.driver",
+                System.getProperty("user.dir") + "/vendor/chromedriver");
+
+        driver = new ChromeDriver();
      }
 
     public void openPage(String url){

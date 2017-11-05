@@ -51,4 +51,15 @@ public class SignUpPage extends PageObject {
         return driver.findElement(By.cssSelector(".RTL")).getText();
     }
 
+    public String getSiteAddress() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".RTL")));
+        return driver.getCurrentUrl();
+    }
+
+    public String getErrorMessage() {
+        String xpath = "//*[@id=\"headersignupform\"]/div[2]/div";
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+        return driver.findElement(By.xpath(xpath)).getText();
+    }
+
 }
