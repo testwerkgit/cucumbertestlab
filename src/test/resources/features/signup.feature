@@ -1,9 +1,12 @@
 Feature: Make a new user account for website phptravels
 
+  Background: Open browser
+    Given I have opened browser 'Firefox'
+
   Scenario: Make a new login for John Doe
     Given I open the register page at 'http://www.phptravels.net/register'
-    When I make a new account for user 'johndoe@whoami.com'
-    Then the welcome message 'Hi, John Doe' is displayed
+    When I make a new account for user 'johndoe1@whoami.com'
+    Then the welcome message 'Hi, Donald duck' is displayed
 
   Scenario Outline: Make several new logins by use of abstract scenario
     Given I open the register page at 'http://www.phptravels.net/register'
@@ -22,3 +25,5 @@ Feature: Make a new user account for website phptravels
      And I open the register page at 'http://www.phptravels.net/register'
      And I make a new account for user 'mail@whoami.com'
      Then the error message 'Email Already Exists.' is displayed
+
+
